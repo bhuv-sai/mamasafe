@@ -1,9 +1,10 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
 
 app = FastAPI()
-
+app.mount("/", StaticFiles(directory="FRONTEND", html=True), name="frontend")
 # CORS middleware
 app.add_middleware(
     CORSMiddleware,
@@ -14,6 +15,8 @@ app.add_middleware(
 )
 
 class Symptoms(BaseModel):
+    email:str
+    password:str
     week:int
     pain:int
     contractions:str
