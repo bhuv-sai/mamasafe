@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MamaSafe – Smarter Care for Safer Moms</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,700;1,500&display=swap" rel="stylesheet">
+  <Link href="index.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="petals-bg" id="petals"></div>
+
+<!-- ══════════════════ LOGIN PAGE ══════════════════ -->
+<div class="page" id="loginPage" style="display:flex;">
+  <div class="login-orb orb1"></div>
+  <div class="login-orb orb2"></div>
+  <div class="login-orb orb3"></div>
+
+  <div class="login-card">
+    <div class="logo-area">
+      <!-- Pregnant Woman SVG Logo -->
+      <div class="logo-icon">
+        <img src="logo.jpeg" alt="logo"/>
+      </div>
+      <div class="app-name">Mama<span>Safe</span></div>
+      <div class="tagline">Smarter Care for Safer Moms</div>
+    </div>
+
+    <div class="login-title">Welcome to MamaSafe 🌸</div>
+
+    <div class="field-group">
+      <label>Email Address</label>
+      <input type="email" id="loginEmail" placeholder="you@example.com">
+    </div>
+    <div class="field-group">
+      <label>Password</label>
+      <input type="password" id="loginPassword" placeholder="••••••••">
+    </div>
+
+    <button class="btn-primary" onclick="doLogin()">Sign In to MamaSafe</button>
+    <div class="login-footer">Don't have an account? <a onclick="doLogin()">Create one free →</a></div>
+  </div>
+</div>
+
+<!-- ══════════════════ HOME PAGE ══════════════════ -->
+<div class="page" id="homePage">
+  <nav>
+    <div class="nav-logo">
+      <div class="nav-logo-icon">
+        <img src="logo.jpeg" alt="logo" style="width:100%;border-radius: 50%;"/>
+      </div>
+      <div>
+        <div class="nav-brand">Mama<span>Safe</span></div>
+        <div class="nav-tagline">Smarter Care for Safer Moms</div>
+      </div>
+    </div>
+    <div class="nav-actions">
+      <div class="nav-week-badge">🌿 Weeks 32–40</div>
+      <button class="nav-btn active-tab" id="btn-home" onclick="switchToHome()">Home</button>
+      <button class="nav-btn" id="btn-contact" onclick="switchToContact()">Contacts</button>
+      <button class="nav-btn" onclick="doLogout()">Sign Out</button>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-text">
+      <div class="hero-eyebrow">Late-Stage Pregnancy Care</div>
+      <h1 class="hero-title">Know Your<br>Body. <em>Trust</em><br>Your Instincts.</h1>
+      <p class="hero-desc">MamaSafe helps you understand symptoms during your final trimester — giving you clear, calm guidance when you need it most.</p>
+      <button class="hero-cta" onclick="scrollToChecker()">🌸 Check Symptoms Now</button>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-illustration">
+        <img src="logo.jpeg" alt="logo" style="border-radius:50%;"/>
+        <div class="hero-badge b1"><div class="badge-dot badge-green"></div>Monitoring Active</div>
+        <div class="hero-badge b2"><div class="badge-dot badge-rose"></div>Symptom Tracker</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="features-section">
+    <div class="section-label">How MamaSafe Helps</div>
+    <div class="section-title">Care at Every Step</div>
+    <div class="cards-grid">
+      <div class="feat-card"><div class="feat-icon rose">🔍</div><h3>Smart Symptom Analysis</h3><p>Our rule-based engine evaluates combinations of symptoms holistically — not in isolation — for accurate risk classification.</p></div>
+      <div class="feat-card"><div class="feat-icon sage">🛡️</div><h3>Three-Level Risk Triage</h3><p>Every assessment is classified as Normal, Monitor, or Emergency — with clear, calm guidance tailored to your situation.</p></div>
+      <div class="feat-card"><div class="feat-icon gold">💬</div><h3>Explainable Decisions</h3><p>MamaSafe tells you exactly why a risk level was assigned, so you're always informed and never left guessing.</p></div>
+    </div>
+    <div class="divider"></div>
+    <div class="section-label">Your Health Tool</div>
+    <div class="section-title">Symptom Checker</div>
+  </section>
+
+  <section class="checker-section" id="checkerSection">
+    <div class="checker-card">
+      <div class="checker-header">
+        <h2>AI-Based Symptom Checker</h2>
+        <p>Late-Stage Pregnancy · Weeks 32–40 · Fill in your current symptoms below</p>
+      </div>
+
+      <div class="form-grid">
+
+        <!-- 1. Gestational Week — FIRST -->
+        <div class="form-field full">
+          <label>Gestational Week (32–40)</label>
+          <input type="number" id="week" min="32" max="40" value="36" placeholder="Enter your week e.g. 36">
+        </div>
+
+        <!-- 2. Pain Level — SECOND, radio pills -->
+        <div class="form-field full">
+          <label>Pain Level</label>
+          <div class="pain-options">
+            <div class="pain-opt">
+              <input type="radio" name="pain" id="pain1" value="1" checked>
+              <label for="pain1"><span class="pain-num">1</span>Mild</label>
+            </div>
+            <div class="pain-opt">
+              <input type="radio" name="pain" id="pain2" value="2">
+              <label for="pain2"><span class="pain-num">2</span>Moderate</label>
+            </div>
+            <div class="pain-opt">
+              <input type="radio" name="pain" id="pain3" value="3">
+              <label for="pain3"><span class="pain-num">3</span>Severe</label>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. Contractions -->
+        <div class="form-field">
+          <label>Contractions</label>
+          <div class="select-wrap">
+            <select id="contractions">
+              <option value="No">No</option>
+              <option value="Mild">Mild</option>
+              <option value="Moderate">Moderate</option>
+              <option value="Severe">Severe</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- 4. Bleeding -->
+        <div class="form-field">
+          <label>Bleeding?</label>
+          <div class="select-wrap">
+            <select id="bleeding">
+              <option value="No">No</option>
+              <option value="Yes">Yes</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- 5. Fetal Movement -->
+        <div class="form-field">
+          <label>Fetal Movement</label>
+          <div class="select-wrap">
+            <select id="movement">
+              <option value="Normal">Normal</option>
+              <option value="Reduced">Reduced</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- 6. Swelling -->
+        <div class="form-field">
+          <label>Swelling</label>
+          <div class="select-wrap">
+            <select id="swelling">
+              <option value="None">None</option>
+              <option value="Mild">Mild</option>
+              <option value="Severe">Severe</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- 7. Vision -->
+        <div class="form-field">
+          <label>Vision</label>
+          <div class="select-wrap">
+            <select id="vision">
+              <option value="Normal">Normal</option>
+              <option value="Blurred">Blurred Vision</option>
+            </select>
+          </div>
+        </div>
+
+      </div>
+
+      <button class="check-btn" onclick="checkRisk()">
+        <div class="btn-shimmer"></div>
+        🌸 Assess My Symptoms
+      </button>
+      <div class="result-area" id="result"></div>
+    </div>
+  </section>
+
+  <footer>
+    <strong>MamaSafe</strong> · Smarter Care for Safer Moms<br>
+    <p>This tool is for informational guidance only and does not constitute medical advice. Always consult a qualified healthcare professional.</p>
+  </footer>
+</div>
+
+<!-- ══════════════════ CONTACT PAGE ══════════════════ -->
+<div class="page" id="contactPage">
+  <nav>
+    <div class="nav-logo">
+      <div class="nav-logo-icon">
+        <svg viewBox="0 0 60 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="30" cy="11" r="9" fill="#c9615a"/>
+          <path d="M16 26 Q16 22 30 22 Q44 22 44 26 L46 46 Q46 52 30 52 Q14 52 14 46 Z" fill="#e8a89c"/>
+          <ellipse cx="30" cy="44" rx="14" ry="13" fill="#f7d6d0"/>
+          <path d="M30 48 C30 48 24 43.5 24 40 C24 38 25.5 36.5 27.5 36.5 C28.6 36.5 29.6 37.1 30 38 C30.4 37.1 31.4 36.5 32.5 36.5 C34.5 36.5 36 38 36 40 C36 43.5 30 48 30 48Z" fill="#c9615a" opacity="0.7"/>
+        </svg>
+      </div>
+      <div>
+        <div class="nav-brand">Mama<span>Safe</span></div>
+        <div class="nav-tagline">Smarter Care for Safer Moms</div>
+      </div>
+    </div>
+    <div class="nav-actions">
+      <div class="nav-week-badge">🌿 Weeks 32–40</div>
+      <button class="nav-btn" id="btn-home2" onclick="switchToHome()">Home</button>
+      <button class="nav-btn active-tab" id="btn-contact2" onclick="switchToContact()">Contacts</button>
+      <button class="nav-btn" onclick="doLogout()">Sign Out</button>
+    </div>
+  </nav>
+
+  <div class="contact-hero">
+    <h1>Our <em>Care</em> Team</h1>
+    <p>Dedicated obstetric specialists here to support you through every moment of your pregnancy journey. Reach out anytime — we are here for you.</p>
+  </div>
+
+  <div class="contact-body">
+
+    <div class="emergency-banner">
+      <div class="emergency-icon">🚨</div>
+      <div class="emergency-text">
+        <h3>Medical Emergency? Act Immediately</h3>
+        <p>If you experience severe bleeding, blurred vision, fetal movement stopping, or extreme pain — do not wait. Call emergency services or go directly to the nearest hospital now.</p>
+        <div class="emergency-numbers">
+          <div class="emergency-num">📞 108 – Ambulance</div>
+          <div class="emergency-num">📞 112 – National Emergency</div>
+          <div class="emergency-num">📞 102 – Maternal Helpline</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-label">Meet the Specialists</div>
+    <div class="section-title" style="margin-bottom:36px;">Our Obstetric Doctors</div>
+
+    <div class="doctors-grid">
+      <div class="doctor-card">
+        <div class="doctor-avatar avatar-rose">👩‍⚕️</div>
+        <div class="doctor-name">Dr. Neeraja Seerapu</div>
+        <div class="doctor-title">Senior Obstetrician & Gynaecologist</div>
+        <div class="doctor-info">
+          <div class="doc-info-row"><span>📞</span><span>+91 98480 12345</span></div>
+          <div class="doc-info-row"><span>✉️</span><span>neeraja.seerapu@mamasafe.in</span></div>
+          <div class="doc-info-row"><span>🏥</span><span>King George Hospital, Visakhapatnam</span></div>
+          <div class="doc-info-row"><span>🎓</span><span>MBBS, MD (OBG) – Andhra University</span></div>
+          <div class="doc-info-row"><span>⏰</span><span>Mon – Sat · 9 AM – 5 PM</span></div>
+          <div class="doc-info-row"><span>💼</span><span>14 yrs · High-risk pregnancies</span></div>
+        </div>
+        <div class="doctor-badge">✔ Available for Teleconsult</div>
+      </div>
+
+      <div class="doctor-card">
+        <div class="doctor-avatar avatar-sage">👩‍⚕️</div>
+        <div class="doctor-name">Dr. Bhuvana Sai Mamidi</div>
+        <div class="doctor-title">Maternal-Fetal Medicine Specialist</div>
+        <div class="doctor-info">
+          <div class="doc-info-row"><span>📞</span><span>+91 97040 67890</span></div>
+          <div class="doc-info-row"><span>✉️</span><span>bhuvana.mamidi@mamasafe.in</span></div>
+          <div class="doc-info-row"><span>🏥</span><span>Andhra Hospitals, Vijayawada</span></div>
+          <div class="doc-info-row"><span>🎓</span><span>MBBS, DGO, DNB – AIIMS Hyderabad</span></div>
+          <div class="doc-info-row"><span>⏰</span><span>Tue – Sun · 10 AM – 6 PM</span></div>
+          <div class="doc-info-row"><span>💼</span><span>11 yrs · Fetal diagnostics & monitoring</span></div>
+        </div>
+        <div class="doctor-badge">✔ Available for Teleconsult</div>
+      </div>
+
+      <div class="doctor-card">
+        <div class="doctor-avatar avatar-gold">👩‍⚕️</div>
+        <div class="doctor-name">Dr. Sravanthi Paluchuri</div>
+        <div class="doctor-title">Obstetric Emergency Consultant</div>
+        <div class="doctor-info">
+          <div class="doc-info-row"><span>📞</span><span>+91 96660 54321</span></div>
+          <div class="doc-info-row"><span>✉️</span><span>sravanthi.paluchuri@mamasafe.in</span></div>
+          <div class="doc-info-row"><span>🏥</span><span>Ramesh Hospitals, Guntur</span></div>
+          <div class="doc-info-row"><span>🎓</span><span>MBBS, MS (OBG) – NTR University</span></div>
+          <div class="doc-info-row"><span>⏰</span><span>Mon – Fri · 8 AM – 4 PM</span></div>
+          <div class="doc-info-row"><span>💼</span><span>9 yrs · Preeclampsia & preterm care</span></div>
+        </div>
+        <div class="doctor-badge">✔ Available for Teleconsult</div>
+      </div>
+    </div>
+
+    <div class="contact-info-grid">
+      <div class="info-card">
+        <div class="info-card-title"><span>🏥</span> MamaSafe Prenatal Clinic</div>
+        <div class="info-row"><div class="info-row-icon">📍</div><div class="info-row-content"><div class="info-row-label">Address</div><div class="info-row-value">Plot 42, Madhura Nagar, ECIL Road,<br>Visakhapatnam – 530 022, Andhra Pradesh</div></div></div>
+        <div class="info-row"><div class="info-row-icon">📞</div><div class="info-row-content"><div class="info-row-label">Clinic Reception</div><div class="info-row-value">+91 891 243 7890</div></div></div>
+        <div class="info-row"><div class="info-row-icon">📠</div><div class="info-row-content"><div class="info-row-label">Appointments</div><div class="info-row-value">+91 891 243 7891</div></div></div>
+        <div class="info-row"><div class="info-row-icon">✉️</div><div class="info-row-content"><div class="info-row-label">General Enquiries</div><div class="info-row-value">care@mamasafe.in</div></div></div>
+        <div class="info-row"><div class="info-row-icon">🌐</div><div class="info-row-content"><div class="info-row-label">Website</div><div class="info-row-value">www.mamasafe.in</div></div></div>
+      </div>
+
+      <div class="info-card">
+        <div class="info-card-title"><span>🕐</span> Clinic Hours & Services</div>
+        <table class="hours-table">
+          <tr><td>Monday – Friday</td><td>8:00 AM – 7:00 PM <span class="open-tag">OPEN</span></td></tr>
+          <tr><td>Saturday</td><td>9:00 AM – 4:00 PM <span class="open-tag">OPEN</span></td></tr>
+          <tr><td>Sunday</td><td>Emergency Only</td></tr>
+          <tr><td>Teleconsult</td><td>24 × 7 Available</td></tr>
+        </table>
+        <div style="margin-top:20px;">
+          <div class="info-row"><div class="info-row-icon">🤱</div><div class="info-row-content"><div class="info-row-label">Services Offered</div><div class="info-row-value">Prenatal check-ups · Fetal monitoring · Ultrasound · Preeclampsia screening · Labour support · Postnatal care</div></div></div>
+          <div class="info-row"><div class="info-row-icon">🗓️</div><div class="info-row-content"><div class="info-row-label">Book Appointment</div><div class="info-row-value">Call reception or email appointments@mamasafe.in</div></div></div>
+        </div>
+      </div>
+
+      <div class="info-card">
+        <div class="info-card-title"><span>💛</span> Support & Helplines</div>
+        <div class="info-row"><div class="info-row-icon">📞</div><div class="info-row-content"><div class="info-row-label">24-hr Nurse Helpline</div><div class="info-row-value">1800-XXX-MAMA (Toll Free)</div></div></div>
+        <div class="info-row"><div class="info-row-icon">💬</div><div class="info-row-content"><div class="info-row-label">WhatsApp Support</div><div class="info-row-value">+91 98480 99999</div></div></div>
+        <div class="info-row"><div class="info-row-icon">🧘</div><div class="info-row-content"><div class="info-row-label">Mental Wellness Counsellor</div><div class="info-row-value">+91 97040 33333 · wellness@mamasafe.in</div></div></div>
+        <div class="info-row"><div class="info-row-icon">🍼</div><div class="info-row-content"><div class="info-row-label">Lactation Consultant</div><div class="info-row-value">+91 96660 44444</div></div></div>
+      </div>
+
+      <div class="info-card">
+        <div class="info-card-title"><span>🗺️</span> Nearest Partner Hospitals</div>
+        <div class="info-row"><div class="info-row-icon">🏥</div><div class="info-row-content"><div class="info-row-label">King George Hospital</div><div class="info-row-value">Maharani Peta, Visakhapatnam · 📞 0891-2564891</div></div></div>
+        <div class="info-row"><div class="info-row-icon">🏥</div><div class="info-row-content"><div class="info-row-label">Andhra Hospitals</div><div class="info-row-value">Governorpet, Vijayawada · 📞 0866-2571111</div></div></div>
+        <div class="info-row"><div class="info-row-icon">🏥</div><div class="info-row-content"><div class="info-row-label">Ramesh Hospitals</div><div class="info-row-value">Brodipet, Guntur · 📞 0863-2235678</div></div></div>
+        <div class="info-row"><div class="info-row-icon">🏥</div><div class="info-row-content"><div class="info-row-label">NIMS – Hyderabad</div><div class="info-row-value">Punjagutta, Hyderabad · 📞 040-23489000</div></div></div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    <strong>MamaSafe</strong> · Smarter Care for Safer Moms<br>
+    <p>This tool is for informational guidance only and does not constitute medical advice. Always consult a qualified healthcare professional.</p>
+  </footer>
+</div>
+
+<script>
+  // PETALS
+  (function(){
+    const c=document.getElementById('petals');
+    const cols=['#f7d6d0','#e8a89c','#c8dbcd','#f0d9b5','#fceae6','#d4e8da'];
+    for(let i=0;i<18;i++){
+      const p=document.createElement('div'); p.className='petal';
+      const s=20+Math.random()*40;
+      p.style.cssText=`width:${s}px;height:${s}px;background:${cols[Math.floor(Math.random()*cols.length)]};left:${Math.random()*100}%;animation-duration:${12+Math.random()*18}s;animation-delay:${-Math.random()*20}s;`;
+      c.appendChild(p);
+    }
+  })();
+
+  function showEl(id,flex){
+    const el=document.getElementById(id);
+    el.style.display=flex?'flex':'block';
+    el.classList.add('page-fade');
+    el.addEventListener('animationend',()=>el.classList.remove('page-fade'),{once:true});
+  }
+  function hideEl(id){
+    const el=document.getElementById(id);
+    el.style.display='none';
+  }
+
+  function doLogin(){
+
+    const email=document.getElementById('loginEmail').value.trim();
+    const password=document.getElementById('loginPassword').value.trim();
+  
+    if(!email || !password){
+        alert("Please enter email and password");
+        return;
+    }
+  
+    if(password.length < 8){
+        alert("Password must be at least 8 characters");
+        return;
+    }
+  
+    const login=document.getElementById('loginPage');
+    login.style.transition='opacity 0.4s ease,transform 0.4s ease';
+    login.style.opacity='0';
+    login.style.transform='scale(0.97)';
+  
+    setTimeout(()=>{
+        login.style.display='none';
+        showEl('homePage',false);
+        window.scrollTo(0,0);
+    },420);
+  }
+  
+  function doLogout(){
+    document.getElementById('loginEmail').value='';
+    document.getElementById('loginPassword').value='';
+    document.getElementById('result').innerHTML='';
+    hideEl('homePage'); hideEl('contactPage');
+    showEl('loginPage',true);
+    window.scrollTo(0,0);
+  }
+
+  function switchToHome(){
+    hideEl('contactPage');
+    showEl('homePage',false);
+    document.getElementById('btn-home').classList.add('active-tab');
+    document.getElementById('btn-contact').classList.remove('active-tab');
+    window.scrollTo(0,0);
+  }
+
+  function switchToContact(){
+    hideEl('homePage');
+    showEl('contactPage',false);
+    document.getElementById('btn-contact').classList.add('active-tab');
+    document.getElementById('btn-home').classList.remove('active-tab');
+    window.scrollTo(0,0);
+  }
+
+  function scrollToChecker(){
+    document.getElementById('checkerSection').scrollIntoView({behavior:'smooth',block:'start'});
+  }
+  async function checkRisk(){
+
+    const email = document.getElementById("loginEmail").value.trim();
+    const password = document.getElementById("loginPassword").value.trim();
+  
+    const painSel=document.querySelector('input[name="pain"]:checked');
+    const pain=painSel?parseInt(painSel.value):1;
+  
+    const contractions=document.getElementById('contractions').value;
+    const bleeding=document.getElementById('bleeding').value;
+    const movement=document.getElementById('movement').value;
+    const swelling=document.getElementById('swelling').value;
+    const vision=document.getElementById('vision').value;
+    const week=parseInt(document.getElementById('week').value)||36;
+  
+    const data={
+      email:email,
+      password:password,
+      week:week,
+      pain:pain,
+      contractions:contractions,
+      bleeding:bleeding,
+      movement:movement,
+      swelling:swelling,
+      vision:vision
+    };
+  
+    try{
+  
+      const response = await fetch("http://127.0.0.1:8000/predict",{
+        method:"POST",
+        headers:{
+          "Content-Type":"application/json"
+        },
+        body:JSON.stringify(data)
+      });
+  
+      const result = await response.json();
+  
+      document.getElementById("result").innerHTML =
+      `
+      <div class="result-box result-${result.risk.toLowerCase()}">
+          <div class="result-header">
+              <div class="result-icon">⚕️</div>
+              <div class="result-level">${result.risk}</div>
+          </div>
+  
+          <div class="result-message">
+              ${result.message}
+          </div>
+      </div>
+      `;
+  
+    }
+    catch(error){
+      document.getElementById("result").innerHTML =
+      `<div style="color:red">Server connection failed</div>`;
+    }
+  }
+</script>
+</body>
+</html>
