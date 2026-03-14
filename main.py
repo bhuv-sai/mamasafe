@@ -33,17 +33,17 @@ def predict(data: Symptoms):
 
     risk = "Normal"
     message = (
-"Risk Level: NORMAL\n\n"
-"Detected Conditions\n"
-"• Mild discomfort detected\n"
-"• Irregular contractions observed\n"
-"• Fetal movement is within normal range\n\n"
-"Assessment\n"
+"Risk Level: NORMAL<br><br>"
+"Detected Conditions<br>"
+"• Mild discomfort detected<br>"
+"• Irregular contractions observed<br>"
+"• Fetal movement is within normal range<br><br>"
+"Assessment<br>"
 "These symptoms are commonly experienced during the late stage of pregnancy "
-"and currently do not indicate any serious complication.\n\n"
-"Recommendation\n"
-"• Continue regular prenatal care\n"
-"• Stay hydrated and get adequate rest\n"
+"and currently do not indicate any serious complication.<br><br>"
+"Recommendation<br>"
+"• Continue regular prenatal care<br>"
+"• Stay hydrated and get adequate rest<br>"
 "• Monitor symptoms regularly"
 )
     # 🚨 Emergency Conditions
