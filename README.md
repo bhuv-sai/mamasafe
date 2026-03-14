@@ -1,78 +1,154 @@
-# MamaSafe - AI Pregnancy Risk Checker
+<h1 align="center">🤰 MamaSafe – AI Pregnancy Risk Checker 🚑</h1>
 
-MamaSafe is an AI-based symptom checker designed to detect potential risks during the late stage of pregnancy (weeks 32–40).
+<p align="center">
+  An AI-powered web application that analyzes symptoms during late-stage pregnancy (32–40 weeks) and provides risk-based guidance to help mothers identify potential complications early.
+</p>
 
-## Features
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3.x-blue?style=for-the-badge&logo=python">
+  <img src="https://img.shields.io/badge/Machine%20Learning-Scikit--Learn-orange?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Backend-FastAPI-green?style=for-the-badge&logo=fastapi">
+  <img src="https://img.shields.io/badge/Deployment-Docker-blue?style=for-the-badge&logo=docker">
+  <img src="https://img.shields.io/badge/Cloud-Render-purple?style=for-the-badge">
+</p>
 
-- Symptom-based risk prediction
-- Risk categories: Normal, Monitor, Emergency
-- FastAPI backend
-- Interactive frontend interface
-- Machine learning model for prediction
-- Docker support for deployment
+---
 
-## Project Architecture
+# 🔗 Live Demo
 
-Frontend (HTML / CSS / JS)
-        ↓
-FastAPI Backend
-        ↓
-ML Prediction Model
-        ↓
-Risk Classification
-        ↓
-User Guidance
+👉 https://mamasafe.onrender.com/app/
 
-## Installation
+---
 
-Clone the repository:
+# 📖 Project Overview
 
-git clone https://github.com/yourusername/mamasafe.git
+Late-stage pregnancy (weeks **32–40**) can involve many symptoms that may be either normal or signs of serious complications.
 
-Install dependencies:
+In many rural and semi-urban areas, immediate medical consultation may not always be available. **MamaSafe** helps bridge this gap by providing a **symptom-based AI risk assessment system**.
 
-pip install -r requirements.txt
+The system evaluates combinations of symptoms and classifies the pregnancy condition into risk categories.
 
-Run the server:
+The goal is **not to diagnose**, but to provide **early risk awareness and guidance**.
 
-uvicorn app.main:app --reload
+---
 
-## Docker Deployment
-
-Build Docker image:
-
-docker build -t mamasafe .
-
-Run container:
-
-docker run -p 8000:8000 mamasafe
-
-## API Endpoint
-
-POST /predict
-
-Example Input:
-
-{
-  "week": 36,
-  "pain": 2,
-  "contractions": "Frequent",
-  "bleeding": "No",
-  "movement": "Normal",
-  "swelling": "Mild",
-  "vision": "Normal"
-}
-
-## Technologies Used
+# 🛠️ Tech Stack
 
 - Python
 - FastAPI
 - Scikit-learn
+- NumPy
+- Pandas
+- HTML / CSS / JavaScript
 - Docker
-- HTML/CSS/JavaScript
+- Uvicorn
+- Pickle (Model Serialization)
+- Git & GitHub
 
-## Future Improvements
+---
 
-- Mobile application
-- Real-time monitoring
-- Integration with hospital systems
+# ⚙️ Machine Learning Workflow
+
+1️⃣ Data Simulation & Dataset Creation  
+2️⃣ Data Preprocessing  
+3️⃣ Feature Engineering  
+4️⃣ Model Training using Decision Tree / Classification Model  
+5️⃣ Model Serialization using Pickle  
+6️⃣ API Integration using FastAPI  
+7️⃣ Frontend Integration  
+8️⃣ Docker Containerization  
+9️⃣ Cloud Deployment using Render
+
+---
+
+# 📊 Model Risk Classification
+
+The system categorizes symptoms into three risk levels:
+
+| Risk Level | Meaning |
+|-------------|---------|
+| ✅ Normal | Symptoms are common during late pregnancy |
+| ⚠️ Monitor | Symptoms should be monitored and doctor consultation recommended |
+| 🚨 Emergency | Immediate medical attention required |
+
+---
+
+# 🖥️ Application Features
+
+✔ AI-based pregnancy symptom analysis  
+✔ Risk classification (Normal / Monitor / Emergency)  
+✔ Explainable symptom reasoning  
+✔ Clean and simple user interface  
+✔ Fast API-based backend  
+✔ Docker-based deployment  
+✔ Cloud hosted application  
+
+---
+
+# 📂 Project Structure
+mamasafe/
+│
+├── app/
+│ ├── main.py
+│
+├── models/
+│ └── pregnancy_model.pkl
+│
+├── frontend/
+│ └── index.html
+│
+├── notebooks/
+│ ├── train.ipynb
+│ └── test.ipynb
+│
+├── Dockerfile
+├── requirements.txt
+├── setup.py
+├── README.md
+
+
+---
+
+# 🚀 Run Locally
+
+### 1️⃣ Clone the repository
+
+```bash
+git clone https://github.com/your-username/mamasafe.git
+cd mamasafe
+2️⃣ Install dependencies
+pip install -r requirements.txt
+3️⃣ Run FastAPI server
+uvicorn app.main:app --reload
+4️⃣ Open in browser
+http://127.0.0.1:8000
+🐳 Docker Deployment
+Build Docker image
+docker build -t mamasafe .
+Run container
+docker run -p 8000:8000 mamasafe
+📌 Example Symptom Input
+Gestational Week: 36
+Pain Level: Moderate
+Contractions: Frequent
+Bleeding: No
+Fetal Movement: Normal
+Swelling: Severe
+Vision Disturbance: No
+🎯 Future Improvements
+
+Mobile application support
+
+Real-time pregnancy monitoring
+
+Integration with hospital systems
+
+Advanced deep learning model
+
+Multi-language support for rural users
+
+👩‍💻 Author
+
+Janaki Sravanthi Paluchuri
+Bhuvana Sai Mamidi
+Neeraja Seerapu
