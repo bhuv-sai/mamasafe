@@ -83,9 +83,9 @@ The system categorizes symptoms into three risk levels:
 ✔ Docker-based deployment  
 ✔ Cloud hosted application  
 
----
 
-# 📂 Project Structure
+## 📂 Project Structure
+---
 mamasafe/
 │
 ├── app/
@@ -112,22 +112,48 @@ mamasafe/
 # 🚀 Run Locally
 
 ### 1️⃣ Clone the repository
+---
+
+## 🚀 Run Locally
+
+### 1️⃣ Clone the repository
 
 ```bash
-git clone https://github.com/your-username/mamasafe.git
+git clone https://github.com/bhuv-sai/mamasafe.git
 cd mamasafe
-2️⃣ Install dependencies
+```
+### 2️⃣ Install dependencies
+``` bash
 pip install -r requirements.txt
-3️⃣ Run FastAPI server
+```
+### 3️⃣ Run FastAPI Server
+```bash
 uvicorn app.main:app --reload
-4️⃣ Open in browser
+```
+
+### 4️⃣ Open in Browser
+```bash
 http://127.0.0.1:8000
-🐳 Docker Deployment
-Build Docker image
+```
+
+### 4️⃣ Open in Browser
+```bash
+http://127.0.0.1:8000
+```
+
+## 🐳 Docker Deployment
+### Build Docker Image
+```bash
 docker build -t mamasafe .
-Run container
+```
+
+### Run Docker Container
+```bash
 docker run -p 8000:8000 mamasafe
-📌 Example Symptom Input
+```
+
+## 📌 Example Symptom Input
+
 Gestational Week: 36
 Pain Level: Moderate
 Contractions: Frequent
@@ -135,7 +161,9 @@ Bleeding: No
 Fetal Movement: Normal
 Swelling: Severe
 Vision Disturbance: No
-🎯 Future Improvements
+
+
+## 🎯 Future Improvements
 
 Mobile application support
 
@@ -147,8 +175,9 @@ Advanced deep learning model
 
 Multi-language support for rural users
 
-👩‍💻 Author
+## 👩‍💻 Authors
 
 Janaki Sravanthi Paluchuri
 Bhuvana Sai Mamidi
 Neeraja Seerapu
+
