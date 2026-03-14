@@ -86,6 +86,7 @@ The system categorizes symptoms into three risk levels:
 
 ## 📂 Project Structure
 ---
+```bash
 mamasafe/
 │
 ├── app/
@@ -106,7 +107,7 @@ mamasafe/
 ├── setup.py
 ├── README.md
 
-
+```
 ---
 
 # 🚀 Run Locally
@@ -177,7 +178,7 @@ Multi-language support for rural users
 
 ## 👩‍💻 Authors
 
-Janaki Sravanthi Paluchuri
-Bhuvana Sai Mamidi
-Neeraja Seerapu
+#### Janaki Sravanthi Paluchuri
+#### Bhuvana Sai Mamidi
+#### Neeraja Seerapu
 
